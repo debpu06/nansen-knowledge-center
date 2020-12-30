@@ -60,6 +60,16 @@ export default function Home(props) {
           <Subtitle>{settings.subheading}</Subtitle>
         </Hgroup>
 
+        <Subtitle>Quick Links</Subtitle>
+        <ul>
+          <li>
+            <a href="https://storybook.thisisnansen.com">Storybook</a>
+          </li>
+          <li>
+            <a href="https://code.thisisnansen.com">Sourcegraph</a>
+          </li>
+        </ul>
+
         <SearchContainer>
           <SearchForm />
         </SearchContainer>

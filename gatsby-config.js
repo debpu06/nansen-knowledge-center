@@ -29,18 +29,26 @@ module.exports = {
                   category: kbAppCategory {
                     slug
                   }
+                  body {
+                    content {
+                      content {
+                        value
+                      }
+                    }
+                  }
                 }
               }
             }
           `,
 
         ref: 'id',
-        index: ['name'],
+        index: ['name', 'body'],
         store: ['name', 'path'],
         normalizer: ({ data }) =>
           data.articles.nodes.map((node) => ({
             id: node.contentful_id,
             name: node.title,
+            body: node.body.json,
             path: `/${node.category.slug}/${node.slug}/`,
           })),
       },
